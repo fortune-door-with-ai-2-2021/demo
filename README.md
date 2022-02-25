@@ -1,2 +1,2 @@
 # demo
-demo version of game
+This is the demo game, not for presentation.
