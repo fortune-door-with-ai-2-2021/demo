@@ -76,7 +76,7 @@ def create_board():  # create map with 2d array
 def print_board():
     i = 0
     for row in board:
-        print(i + 1, row)
+        print(i+1, row)
         i += 1
     print("----------")
 
