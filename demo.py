@@ -86,11 +86,20 @@ def engine(door_ch):
     lvl_player = 1  # leved pos. of player
     while(1):
         # choose the door number from 1 to max door.
-        num = int(input("Enter your door number, from 1 to {}: ".format(
-            door_ch)).strip())  # choose door
-        choose = num - \
-            1 if num > 0 and num <= door_ch else print(
-                "Invalid input, please try again")
+        num = input("Enter door number, 1 to {} (Press e for help): ".format(
+            door_ch)).strip()  # choose door
+        if num == 'e':
+            print("Easy mode activated :)")
+            print_board()
+            ai = solver(board)
+            print('PATH-TO-GOAL ' + str(ai.solve()))
+            break
+        else:
+            if int(num) in range(1, door_ch+1):
+                choose = int(num) - 1
+            else:
+                print('Invalid input')
+                continue
 
         get_type = board[lvl_player - 1][choose].type  # get type of door
         # get dest. level of the door
@@ -146,19 +155,12 @@ def main():
                 door(1, warp_target3), door(0)]
     # end of temp level zone
 
-    print_board()
-
     while(1):
-        text = input("Choose your mode, Easy(e) or Hard(h): ").strip()
-        if text == "h":
-            print("Hard mode activated!")
-            engine(door_ch, lvl_max)
+        text = input("Press p to play, press x to exit: ").strip()
+        if text == "p":
+            engine(door_ch)
             break
-        elif text == "e":
-            print("Easy mode activated :)")
-            ai = solver(board)
-            # expected output [4, 1, 3, 3, goal]
-            print('PATH-TO-GOAL ' + str(ai.solve()))
+        elif text == "x":
             break
         else:
             print("Please try again.")

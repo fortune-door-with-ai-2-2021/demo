@@ -1,4 +1,4 @@
-# Lucy Warp
+# Lucky Warp
 Lucky Warp is a door game with kill and teleport function of each door. The goal is this project is to demonstrate the Depth Limit Search algorithm.
 Note: This is the demo game, not for presentation.
 
