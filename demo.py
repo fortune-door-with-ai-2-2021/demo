@@ -1,3 +1,6 @@
+import random
+
+
 class door:
     def __init__(self, type=None, value=0):
         # 0 = death, 1 = warp, 2 = forward, 3 = goal (last level only)
@@ -117,17 +120,30 @@ def main():
 
     create_board()
 
+    warp_target1, warp_target2, warp_target3 = random.randrange(
+        1, lvl_max-1), random.randrange(1, lvl_max-1), random.randrange(1, lvl_max-1)
+
     # random zone, in this point, use temp level.
-    board[0] = [door(0), door(1, 4), door(1, 1), door(1, 8), door(2)]
-    board[1] = [door(0), door(2), door(1, 1), door(1, 9), door(0)]
-    board[2] = [door(0), door(1, 4), door(1, 1), door(1, 9), door(0)]
-    board[3] = [door(0), door(1, 4), door(1, 1), door(2), door(0)]
-    board[4] = [door(0), door(1, 4), door(2), door(1, 9), door(0)]
-    board[5] = [door(0), door(1, 4), door(1, 1), door(1, 9), door(2)]
-    board[6] = [door(0), door(1, 4), door(1, 1), door(1, 9), door(2)]
-    board[7] = [door(2), door(1, 4), door(1, 1), door(1, 9), door(0)]
-    board[8] = [door(0), door(1, 4), door(2), door(1, 9), door(0)]
-    board[9] = [door(0), door(1, 1), door(3), door(1, 9), door(0)]
+    board[0] = [door(0), door(1, warp_target1), door(
+        1, warp_target2), door(1, warp_target3), door(2)]
+    board[1] = [door(0), door(2), door(1, warp_target2),
+                door(1, warp_target3), door(0)]
+    board[2] = [door(0), door(1, warp_target1), door(
+        1, warp_target2), door(1, warp_target3), door(0)]
+    board[3] = [door(0), door(1, warp_target1), door(
+        1, warp_target2), door(2), door(0)]
+    board[4] = [door(0), door(1, warp_target1), door(2),
+                door(1, warp_target3), door(0)]
+    board[5] = [door(0), door(1, warp_target1), door(
+        1, warp_target2), door(1, warp_target3), door(2)]
+    board[6] = [door(0), door(1, warp_target1), door(
+        1, warp_target2), door(1, warp_target3), door(2)]
+    board[7] = [door(2), door(1, warp_target1), door(
+        1, warp_target2), door(1, warp_target3), door(0)]
+    board[8] = [door(0), door(1, warp_target1), door(2),
+                door(1, warp_target3), door(0)]
+    board[9] = [door(0), door(1, warp_target2), door(3),
+                door(1, warp_target3), door(0)]
     # end of temp level zone
 
     print_board()
