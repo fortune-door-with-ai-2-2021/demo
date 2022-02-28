@@ -56,15 +56,12 @@ class solver:
                     return [c]
 
     def solve(self):
-        # self.max_level+1
-        for i in range(1, 5):
+        for i in range(1, self.max_level+1):
             self.max_depth = i
             print('\n***MAX DEPTH HAS BEEN INCREASED***\n')
             rpath = self.depthLimitedSearch(self.max_depth)
             if rpath:
                 return rpath
-            else:
-                print('Path not found')
 
 
 def create_board():  # create map with 2d array
