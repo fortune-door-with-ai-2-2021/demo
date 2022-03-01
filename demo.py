@@ -56,12 +56,15 @@ class solver:
                     return [c]
 
     def solve(self):
-        for i in range(1, self.max_level+1):
+        # self.max_level+1
+        for i in range(1, 5):
             self.max_depth = i
             print('\n***MAX DEPTH HAS BEEN INCREASED***\n')
             rpath = self.depthLimitedSearch(self.max_depth)
             if rpath:
                 return rpath
+            else:
+                print('Path not found')
 
 
 def create_board():  # create map with 2d array
@@ -85,18 +88,30 @@ def engine(door_ch):
         # choose the door number from 1 to max door.
         num = input("Enter door number, 1 to {} (Press e for help): ".format(
             door_ch)).strip()  # choose door
-        if num == 'e':
-            print("Easy mode activated :)")
-            print_board()
-            ai = solver(board)
-            print('PATH-TO-GOAL ' + str(ai.solve()))
-            break
-        else:
-            if int(num) in range(1, door_ch+1):
+        try :
+            if num == 'e' or num == 'E':
+                print("Easy mode activated :)")
+                print_board()
+                ai = solver(board)
+                print('PATH-TO-GOAL ' + str(ai.solve()))
+                break
+            elif int(num) in range(1, door_ch+1):
                 choose = int(num) - 1
+            elif int (num) >=1 and int (num) <=5 :
+                choose = int(num) - 1
+                print(num)
             else:
-                print('Invalid input')
+                print('Invalid input, Please try again.')
                 continue
+        except:
+            print('Invalid input, Please try again.')
+            continue
+        # else:
+        #     if int(num) in range(1, door_ch+1):
+        #         choose = int(num) - 1
+        #     else:
+        #         print('Invalid input')
+        #         continue
 
         get_type = board[lvl_player - 1][choose].type  # get type of door
         # get dest. level of the door
