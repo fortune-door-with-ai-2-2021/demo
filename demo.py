@@ -86,7 +86,7 @@ def engine(door_ch):
     lvl_player = 1  # leved pos. of player
     while(1):
         # choose the door number from 1 to max door.
-        num = input("Enter door number, 1 to {} (Press e for help): ".format(
+        num = input("Enter door number, 1 to {} (Press e to give up): ".format(
             door_ch)).strip()  # choose door
         try :
             if num == 'e' or num == 'E':
