@@ -1,0 +1,41 @@
+*** Depth Limited Search ***
+>>> 50 x 50 board <<<
+Run #1:	mem = 2,574 bytes | time = 0.004 s
+Run #2:	mem = 3,782 bytes | time = 0.005 s
+Run #3:	mem = 3,119 bytes | time = 0.001 s
+Run #4:	mem = 3,782 bytes | time = 0.004 s
+Run #5:	mem = 3,782 bytes | time = 0.008 s
+Best:	mem = 2,574 bytes | time = 0.001 s
+Worst:	mem = 3,782 bytes | time = 0.008 s
+Average:	mem = 3,407 bytes | time = 0.004 s
+
+>>> 100 x 100 board <<<
+Run #1:	mem = 3,785 bytes | time = 0.011 s
+Run #2:	mem = 3,785 bytes | time = 0.025 s
+Run #3:	mem = 3,273 bytes | time = 0.008 s
+Run #4:	mem = 3,785 bytes | time = 0.012 s
+Run #5:	mem = 2,577 bytes | time = 0.001 s
+Best:	mem = 2,577 bytes | time = 0.001 s
+Worst:	mem = 3,785 bytes | time = 0.025 s
+Average:	mem = 3,441 bytes | time = 0.011 s
+
+*** Breadth Limit Search ***
+>>> 50 x 50 board <<<
+Run #1: mem = 1,421,968 bytes | time = 4.639 s
+Run #2: mem = 598,568 bytes | time = 4.652 s
+Run #3: mem = 2,024,120 bytes | time = 4.324 s
+Run #4: mem = 3,022,640 bytes | time = 4.383 s
+Run #5: mem = 7,622,152 bytes | time = 4.691 s
+Best:	mem = 598,568 bytes | time = 4.324 s
+Worst:	mem = 7,622,152 bytes | time = 4.691 s
+Average:	mem = 2,937,889 bytes | time = 4.538 s
+
+>>> 100 x 100 board <<<
+Run #1: mem = 70,524,848 bytes | time = 75.268 s
+Run #2: mem = 53,651,840 bytes | time = 73.835 s
+Run #3: mem = 27,498,240 bytes | time = 73.961 s
+Run #4: mem = 17,356,032 bytes | time = 70.320 s
+Run #5: mem = 33,988,310 bytes | time = 70.860 s
+Best:	mem = 17,356,032 bytes | time = 4.357 s
+Worst:	mem = 70,524,848 bytes | time = 75.268 s
+Average:	mem = 40,603,854 bytes | time = 72.849 s

@@ -1,4 +1,5 @@
 import random
+import tracemalloc
 
 
 class door:
@@ -88,16 +89,21 @@ def engine(door_ch):
         # choose the door number from 1 to max door.
         num = input("Enter door number, 1 to {} (Press e to give up): ".format(
             door_ch)).strip()  # choose door
-        try :
+        try:
             if num == 'e' or num == 'E':
                 print("Easy mode activated :)")
                 print_board()
                 ai = solver(board)
+                tracemalloc.start()
                 print('PATH-TO-GOAL ' + str(ai.solve()))
+                current, peak = tracemalloc.get_traced_memory()
+                print(
+                    f"Current memory usage is {current / 10**6}MB; Peak was {peak / 10**6}MB")
+                tracemalloc.stop()
                 break
             elif int(num) in range(1, door_ch+1):
                 choose = int(num) - 1
-            elif int (num) >=1 and int (num) <=5 :
+            elif int(num) >= 1 and int(num) <= 5:
                 choose = int(num) - 1
                 print(num)
             else:
