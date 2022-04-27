@@ -149,10 +149,10 @@ def main():
     global door_ch, lvl_max, board
     # pass for variable access: modify
 
-    door_ch = 50
-    lvl_max = 50
+    door_ch = 10
+    lvl_max = 10
 
-    board = genBoard(50, 50)
+    board = genBoard(10, 10)
 
     while(1):
         text = input("Press p to play, press x to exit: ").strip()

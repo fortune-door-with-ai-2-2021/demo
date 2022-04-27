@@ -8,7 +8,7 @@ class solver:
         self.board = board
         self.max_level = len(board)
         self.max_ch = len(board[0])
-        self.filteredtree = {}
+        self.filteredtree = {}  # Initialize dict
 
     def breadthFirstSearch(self, start):
         # maintain a queue of paths
@@ -54,7 +54,8 @@ class solver:
                     if c[4] == '1':
                         if int(c[5:]) > level + 1:
                             out.append(c)
-                self.filteredtree[b] = out
+                self.filteredtree[b] = out  # update
+        print(self.filteredtree)
         return
 
     def solve(self):
@@ -183,10 +184,10 @@ def main():
     global door_ch, lvl_max, board
     # pass for variable access: modify
 
-    door_ch = 50
-    lvl_max = 50
+    door_ch = 5
+    lvl_max = 5
 
-    board = genBoard(50, 50)
+    board = genBoard(5, 5)
 
     while(1):
         text = input("Press p to play, press x to exit: ").strip()
